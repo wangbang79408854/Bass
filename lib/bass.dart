@@ -33,6 +33,11 @@ class Bass {
     return await _channel.invokeMethod('BASS_StreamCreateFile', params);
   }
 
+  static Future<bool> BASS_StreamFree(int handle) async{
+    var params = {"handle": handle};
+    return await _channel.invokeMethod('BASS_StreamFree', params);
+  }
+
   static Future<BASS_CHANNELINFO> BASS_ChannelGetInfo(int handle) async {
     var params = {"handle": handle};
     String json = await _channel.invokeMethod('BASS_ChannelGetInfo', params);
@@ -41,7 +46,7 @@ class Bass {
     return bass_channelinfo;
   }
 
-  static Future<bool> BASS_ChannelSetAttribute(int handle, int attrib, num value)async{
+  static Future<bool> BASS_ChannelSetAttribute(int handle, int attrib, num value) async{
     var params = {"handle": handle,"attrib":attrib,"value":value};
     return await _channel.invokeMethod('BASS_ChannelSetAttribute', params);
   }

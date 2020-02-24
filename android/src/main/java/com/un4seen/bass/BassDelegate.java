@@ -12,6 +12,7 @@ class BassDelegate {
     static final String Init = "init";
     static final String BASS_ChannelPlay = "BASS_ChannelPlay";
     static final String BASS_StreamCreateFile = "BASS_StreamCreateFile";
+    static final String BASS_StreamFree = "BASS_StreamFree";
     static final String BASS_Mixer_StreamCreate = "BASS_Mixer_StreamCreate";
     static final String BASS_ChannelGetInfo = "BASS_ChannelGetInfo";
     static final String BASS_Mixer_StreamAddChannel = "BASS_Mixer_StreamAddChannel";
@@ -27,6 +28,9 @@ class BassDelegate {
                 break;
             case BassDelegate.BASS_StreamCreateFile:
                 BassDelegate.BASS_StreamCreateFile(call, result);
+                break;
+            case BassDelegate.BASS_StreamFree:
+                BassDelegate.BASS_StreamFree(call, result);
                 break;
             case BassDelegate.BASS_ChannelSetAttribute:
                 BassDelegate.BASS_ChannelSetAttribute(call, result);
@@ -65,6 +69,14 @@ class BassDelegate {
         result.success(isplay);
     }
 
+
+    private static void BASS_StreamFree(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
+        int  handle = call.argument("handle");
+        boolean b = BASS.BASS_StreamFree(handle);
+        result.success(b);
+    }
+
+
     private static void BASS_StreamCreateFile(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         String filePath = call.argument("filePath");
         int streamCreateFile = BASS.BASS_StreamCreateFile(filePath, 0, 0, BASS.BASS_STREAM_DECODE);
@@ -83,7 +95,7 @@ class BassDelegate {
     public static void BASS_ChannelSetAttribute(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
         int handle = call.argument("handle");
         int attrib = call.argument("attrib");
-        float value = call.argument("value");
+        float value = Float.valueOf(call.argument("value").toString());
         boolean b = BASS.BASS_ChannelSetAttribute(handle, attrib, value);
         result.success(b);
     }
