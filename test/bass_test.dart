@@ -4,9 +4,4 @@ import 'package:bass/bass.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('bass');
-
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-
-
 }

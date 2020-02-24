@@ -35,14 +35,17 @@ class Bass {
 
   static Future<BASS_CHANNELINFO> BASS_ChannelGetInfo(int handle) async {
     var params = {"handle": handle};
-    String json =
-    await _channel.invokeMethod('BASS_ChannelGetInfo', params);
-
+    String json = await _channel.invokeMethod('BASS_ChannelGetInfo', params);
     var jsonDecoder = new JsonDecoder().convert(json);
-
     var bass_channelinfo = BASS_CHANNELINFO.fromJson(jsonDecoder);
     return bass_channelinfo;
   }
+
+  static Future<bool> BASS_ChannelSetAttribute(int handle, int attrib, num value)async{
+    var params = {"handle": handle,"attrib":attrib,"value":value};
+    return await _channel.invokeMethod('BASS_ChannelSetAttribute', params);
+  }
+
 
   //mixer create Stream
   static Future<int> BASS_Mixer_StreamCreate(

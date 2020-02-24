@@ -15,6 +15,7 @@ class BassDelegate {
     static final String BASS_Mixer_StreamCreate = "BASS_Mixer_StreamCreate";
     static final String BASS_ChannelGetInfo = "BASS_ChannelGetInfo";
     static final String BASS_Mixer_StreamAddChannel = "BASS_Mixer_StreamAddChannel";
+    static final String BASS_ChannelSetAttribute = "BASS_ChannelSetAttribute";
 
     static void handleMethod(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         switch (call.method) {
@@ -26,6 +27,9 @@ class BassDelegate {
                 break;
             case BassDelegate.BASS_StreamCreateFile:
                 BassDelegate.BASS_StreamCreateFile(call, result);
+                break;
+            case BassDelegate.BASS_ChannelSetAttribute:
+                BassDelegate.BASS_ChannelSetAttribute(call, result);
                 break;
             case BassDelegate.BASS_ChannelGetInfo:
                 BassDelegate.BASS_ChannelGetInfo(call, result);
@@ -76,6 +80,13 @@ class BassDelegate {
         result.success(mixer);
     }
 
+    public static void BASS_ChannelSetAttribute(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+        int handle = call.argument("handle");
+        int attrib = call.argument("attrib");
+        float value = call.argument("value");
+        boolean b = BASS.BASS_ChannelSetAttribute(handle, attrib, value);
+        result.success(b);
+    }
     private static void BASS_ChannelGetInfo(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
         BASS.BASS_CHANNELINFO info = new BASS.BASS_CHANNELINFO();
