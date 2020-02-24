@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -13,10 +14,15 @@ class MixerPage extends StatefulWidget {
 
 class Muss {
   String path;
-
   num vol = 1.0; // 默认1
-
   int handle;
+
+  //播放进度
+  double pos =0;
+
+  //文件总长度
+  double totoalSeconds =0;
+
 }
 
 class _MixerPageState extends State<MixerPage> {
@@ -29,10 +35,26 @@ class _MixerPageState extends State<MixerPage> {
     super.initState();
     initBass();
   }
-
+  var _timerPeriodic;
   void initBass() async {
     var init = await Bass.init();
     print("bass 初始化 $init");
+    
+     _timerPeriodic = new Timer.periodic(Duration(milliseconds: 500), (Timer timer){
+       for(var item in paths){
+         handlePlayProgress(item);
+       }
+    });
+    
+  }
+
+  void handlePlayProgress(Muss muss) async{
+    num tick = await Bass.BASS_ChannelGetPosition(muss.handle,BASS.BASS_POS_BYTE);
+    double   current=  await Bass.BASS_ChannelBytes2Seconds(muss.handle,tick);
+    muss.pos = current;
+    setState(() {
+
+    });
   }
 
   void addVol(int index) async {
@@ -44,7 +66,6 @@ class _MixerPageState extends State<MixerPage> {
   }
 
   void decreaseVal(int index) async {
-
     if(paths[index].vol == 0){
       return;
     }
@@ -70,11 +91,26 @@ class _MixerPageState extends State<MixerPage> {
     if (file == null) return;
     var path = file.path;
     var chan = await Bass.BASS_StreamCreateFile(path);
+    num length = await Bass.BASS_ChannelGetLength(chan,BASS.BASS_POS_BYTE);
+    num totoalSeconds = await Bass.BASS_ChannelBytes2Seconds(chan,length);
     var muss = new Muss();
     muss.path = path;
     muss.handle = chan;
+    muss.totoalSeconds = totoalSeconds;
     paths.add(muss);
     setState(() {});
+  }
+
+  void setPosition(int index,double pos) async{
+
+    paths[index].pos = pos;
+    setState(() {});
+
+    num bass_channelSeconds2Bytes = await Bass.BASS_ChannelSeconds2Bytes(paths[index].handle,pos);
+    await Bass.BASS_ChannelSetPosition(paths[index].handle, bass_channelSeconds2Bytes,BASS.BASS_POS_BYTE);
+
+
+
   }
 
   void removeFile(int index) async {
@@ -161,7 +197,26 @@ class _MixerPageState extends State<MixerPage> {
                             ),
                             Text("当前音量${paths[index].vol.toStringAsFixed(1)}")
                           ],
+                        ),
+
+                        Row(
+                          children: <Widget>[
+                            Slider(
+                              value: paths[index].pos,
+                              onChanged: (v) {
+
+
+                                print("pos = $v");
+                                setPosition(index,v);
+                              },
+                              max: paths[index].totoalSeconds,
+                              min: 0,
+                            ),
+                            Text("${paths[index].pos.toStringAsFixed(0)}/"),
+                            Text("${paths[index].totoalSeconds.toStringAsFixed(0)}s")
+                          ],
                         )
+
                       ],
                     );
                   }))

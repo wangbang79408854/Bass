@@ -7,9 +7,7 @@ import 'core/BASSmix.dart';
 import 'core/info/all.dart';
 
 class Bass {
-  static const MethodChannel _channel =
-      const MethodChannel('bass');
-
+  static const MethodChannel _channel = const MethodChannel('bass');
 
   static int defaultFreq = 44100;
 
@@ -33,7 +31,7 @@ class Bass {
     return await _channel.invokeMethod('BASS_StreamCreateFile', params);
   }
 
-  static Future<bool> BASS_StreamFree(int handle) async{
+  static Future<bool> BASS_StreamFree(int handle) async {
     var params = {"handle": handle};
     return await _channel.invokeMethod('BASS_StreamFree', params);
   }
@@ -46,9 +44,37 @@ class Bass {
     return bass_channelinfo;
   }
 
-  static Future<bool> BASS_ChannelSetAttribute(int handle, int attrib, num value) async{
-    var params = {"handle": handle,"attrib":attrib,"value":value};
+  static Future<bool> BASS_ChannelSetAttribute(
+      int handle, int attrib, num value) async {
+    var params = {"handle": handle, "attrib": attrib, "value": value};
     return await _channel.invokeMethod('BASS_ChannelSetAttribute', params);
+  }
+
+
+  static Future<num> BASS_ChannelGetLength(int handle, int mode) async{
+    var params = {"handle": handle, "mode": mode};
+    return await _channel.invokeMethod('BASS_ChannelGetLength', params);
+  }
+
+  static Future<double> BASS_ChannelBytes2Seconds(int handle, num pos) async{
+    var params = {"handle": handle, "pos": pos};
+    return await _channel.invokeMethod('BASS_ChannelBytes2Seconds', params);
+  }
+
+  static Future<double> BASS_ChannelSeconds2Bytes(int handle,num pos) async{
+    var params = {"handle": handle, "pos": pos};
+    return await _channel.invokeMethod('BASS_ChannelSeconds2Bytes', params);
+  }
+
+
+  static Future<num> BASS_ChannelGetPosition(int handle, int mode) async {
+    var params = {"handle": handle, "mode": mode};
+    return await _channel.invokeMethod('BASS_ChannelGetPosition', params);
+  }
+
+  static Future<bool> BASS_ChannelSetPosition(int handle, num pos, int mode) async{
+    var params = {"handle": handle,"pos":pos, "mode": mode};
+    return await _channel.invokeMethod('BASS_ChannelSetPosition', params);
   }
 
 
@@ -64,12 +90,11 @@ class Bass {
     };
 
     final int mixer =
-    await _channel.invokeMethod('BASS_Mixer_StreamCreate', params);
+        await _channel.invokeMethod('BASS_Mixer_StreamCreate', params);
     return mixer;
   }
 
-  static Future<bool> BASS_Mixer_StreamAddChannel(
-      int handle, int chan) async {
+  static Future<bool> BASS_Mixer_StreamAddChannel(int handle, int chan) async {
     var params = {
       "handle": handle,
       "chan": chan,

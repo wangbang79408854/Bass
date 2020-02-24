@@ -2,6 +2,9 @@ package com.un4seen.bass;
 
 import com.google.gson.Gson;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+
 import androidx.annotation.NonNull;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -17,7 +20,16 @@ class BassDelegate {
     static final String BASS_ChannelGetInfo = "BASS_ChannelGetInfo";
     static final String BASS_Mixer_StreamAddChannel = "BASS_Mixer_StreamAddChannel";
     static final String BASS_ChannelSetAttribute = "BASS_ChannelSetAttribute";
+    static final String BASS_ChannelGetPosition = "BASS_ChannelGetPosition";
+    static final String BASS_ChannelSetPosition = "BASS_ChannelSetPosition";
+    static final String BASS_ChannelGetLength = "BASS_ChannelGetLength";
+    static final String BASS_ChannelBytes2Seconds = "BASS_ChannelBytes2Seconds";
+    static final String BASS_ChannelSeconds2Bytes = "BASS_ChannelSeconds2Bytes";
 
+    {
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(false);// 不用科学计数
+    }
     static void handleMethod(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         switch (call.method) {
             case BassDelegate.Init:
@@ -34,6 +46,22 @@ class BassDelegate {
                 break;
             case BassDelegate.BASS_ChannelSetAttribute:
                 BassDelegate.BASS_ChannelSetAttribute(call, result);
+                break;
+            case BassDelegate.BASS_ChannelGetPosition:
+                BassDelegate.BASS_ChannelGetPosition(call, result);
+                break;
+            case BassDelegate.BASS_ChannelSetPosition:
+                BassDelegate.BASS_ChannelSetPosition(call, result);
+                break;
+
+            case BassDelegate.BASS_ChannelGetLength:
+                BassDelegate.BASS_ChannelGetLength(call, result);
+                break;
+            case BassDelegate.BASS_ChannelBytes2Seconds:
+                BassDelegate.BASS_ChannelBytes2Seconds(call, result);
+                break;
+            case BassDelegate.BASS_ChannelSeconds2Bytes:
+                BassDelegate.BASS_ChannelSeconds2Bytes(call, result);
                 break;
             case BassDelegate.BASS_ChannelGetInfo:
                 BassDelegate.BASS_ChannelGetInfo(call, result);
@@ -97,6 +125,40 @@ class BassDelegate {
         int attrib = call.argument("attrib");
         float value = Float.valueOf(call.argument("value").toString());
         boolean b = BASS.BASS_ChannelSetAttribute(handle, attrib, value);
+        result.success(b);
+    }
+    public static void BASS_ChannelGetPosition(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+        int handle = call.argument("handle");
+        int mode = call.argument("mode");
+        long b = BASS.BASS_ChannelGetPosition(handle,mode);
+        result.success(b);
+    }
+    public static void BASS_ChannelSetPosition(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+        int handle = call.argument("handle");
+
+        BigDecimal bd = new BigDecimal(call.argument("pos").toString());
+        int mode = call.argument("mode");
+        boolean b = BASS.BASS_ChannelSetPosition(handle,bd.longValueExact(),mode);
+        result.success(b);
+    }
+
+    public static void BASS_ChannelGetLength(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+        int handle = call.argument("handle");
+        int mode = call.argument("mode");
+        long b = BASS.BASS_ChannelGetLength(handle,mode);
+        result.success(b);
+    }
+
+    public static void BASS_ChannelBytes2Seconds(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+        int handle = call.argument("handle");
+        long pos =Long.parseLong(call.argument("pos").toString());
+        double b = BASS.BASS_ChannelBytes2Seconds(handle,pos);
+        result.success(b);
+    }
+    public static void BASS_ChannelSeconds2Bytes(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+        int handle = call.argument("handle");
+        double pos =Double.parseDouble( call.argument("pos").toString());
+        double b = BASS.BASS_ChannelSeconds2Bytes(handle,pos);
         result.success(b);
     }
     private static void BASS_ChannelGetInfo(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
