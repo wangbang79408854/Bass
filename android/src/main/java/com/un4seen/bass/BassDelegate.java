@@ -25,6 +25,9 @@ class BassDelegate {
     static final String BASS_ChannelGetLength = "BASS_ChannelGetLength";
     static final String BASS_ChannelBytes2Seconds = "BASS_ChannelBytes2Seconds";
     static final String BASS_ChannelSeconds2Bytes = "BASS_ChannelSeconds2Bytes";
+    static final String BASS_ChannelPause = "BASS_ChannelPause";
+    static final String BASS_ChannelStop = "BASS_ChannelStop";
+    static final String BASS_ChannelIsActive = "BASS_ChannelIsActive";
 
     {
         NumberFormat nf = NumberFormat.getInstance();
@@ -37,6 +40,15 @@ class BassDelegate {
                 break;
             case BassDelegate.BASS_ChannelPlay:
                 BassDelegate.BASS_ChannelPlay(call, result);
+                break;
+            case BassDelegate.BASS_ChannelPause:
+                BassDelegate.BASS_ChannelPause(call, result);
+                break;
+            case BassDelegate.BASS_ChannelStop:
+                BassDelegate.BASS_ChannelStop(call, result);
+                break;
+            case BassDelegate.BASS_ChannelIsActive:
+                BassDelegate.BASS_ChannelIsActive(call, result);
                 break;
             case BassDelegate.BASS_StreamCreateFile:
                 BassDelegate.BASS_StreamCreateFile(call, result);
@@ -97,6 +109,22 @@ class BassDelegate {
         result.success(isplay);
     }
 
+
+    private static void BASS_ChannelPause(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
+        int handle = call.argument("handle");
+        boolean isplay = BASS.BASS_ChannelPause(handle);
+        result.success(isplay);
+    }
+    private static void BASS_ChannelStop(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
+        int handle = call.argument("handle");
+        boolean isplay = BASS.BASS_ChannelStop(handle);
+        result.success(isplay);
+    }
+    private static void BASS_ChannelIsActive(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
+        int handle = call.argument("handle");
+        int isActive = BASS.BASS_ChannelIsActive(handle);
+        result.success(isActive);
+    }
 
     private static void BASS_StreamFree(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int  handle = call.argument("handle");
