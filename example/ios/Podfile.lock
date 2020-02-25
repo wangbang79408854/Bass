@@ -1,0 +1,28 @@
+PODS:
+  - bass (0.0.1):
+    - Flutter
+  - file_picker (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - bass (from `.symlinks/plugins/bass/ios`)
+  - file_picker (from `.symlinks/plugins/file_picker/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  bass:
+    :path: ".symlinks/plugins/bass/ios"
+  file_picker:
+    :path: ".symlinks/plugins/file_picker/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  bass: d759c7d189660c7c98e13084c949418bd26eab70
+  file_picker: 408623be2125b79a4539cf703be3d4b3abe5e245
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+
+PODFILE CHECKSUM: 970b3da713b38729118c1fef0b929751811ef346
+
+COCOAPODS: 1.8.4

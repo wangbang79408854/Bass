@@ -29,11 +29,29 @@ class _MixerPageState extends State<MixerPage> {
   List<Muss> paths = [];
   int mixer;
 
+//  Future _addTestData() async {
+//    var path = '/Users/pengxinkai/Desktop/GALA.mp3';
+//    var chan = await Bass.BASS_StreamCreateFile(path);
+//    num length = await Bass.BASS_ChannelGetLength(chan,BASS.BASS_POS_BYTE);
+//    num totoalSeconds = await Bass.BASS_ChannelBytes2Seconds(chan,length);
+//    var muss = new Muss();
+//    muss.path = path;
+//    muss.handle = chan;
+//    muss.totoalSeconds = totoalSeconds;
+//    paths.add(muss);
+//  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     initBass();
+    // 加入测试数据
+//    _addTestData().then((_){
+//      setState(() {
+//
+//      });
+//    });
   }
   var _timerPeriodic;
   void initBass() async {
