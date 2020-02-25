@@ -30,15 +30,18 @@ class _MixerPageState extends State<MixerPage> {
   int mixer;
 
 //  Future _addTestData() async {
-//    var path = '/Users/pengxinkai/Desktop/GALA.mp3';
-//    var chan = await Bass.BASS_StreamCreateFile(path);
-//    num length = await Bass.BASS_ChannelGetLength(chan,BASS.BASS_POS_BYTE);
-//    num totoalSeconds = await Bass.BASS_ChannelBytes2Seconds(chan,length);
-//    var muss = new Muss();
-//    muss.path = path;
-//    muss.handle = chan;
-//    muss.totoalSeconds = totoalSeconds;
-//    paths.add(muss);
+//    List nameList = ['GALA.mp3'];
+//    for (String name in nameList) {
+//      var path = '/Users/pengxinkai/Desktop/$name';
+//      var chan = await Bass.BASS_StreamCreateFile(path);
+//      num length = await Bass.BASS_ChannelGetLength(chan,BASS.BASS_POS_BYTE);
+//      num totoalSeconds = await Bass.BASS_ChannelBytes2Seconds(chan,length);
+//      var muss = new Muss();
+//      muss.path = path;
+//      muss.handle = chan;
+//      muss.totoalSeconds = totoalSeconds;
+//      paths.add(muss);
+//    }
 //  }
 
   @override

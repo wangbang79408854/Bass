@@ -38,6 +38,14 @@
         [self bassChannelBytes2Seconds:call result:result];
     } else if ([@"BASS_ChannelSeconds2Bytes" isEqualToString:call.method]) {
         [self bassChannelSeconds2Bytes:call result:result];
+    } else if ([@"BASS_ChannelPause" isEqualToString:call.method]) {
+        [self bassChannelPause:call result:result];
+    } else if ([@"BASS_ChannelStop" isEqualToString:call.method]) {
+        [self bassChannelStop:call result:result];
+    } else if ([@"BASS_ChannelIsActive" isEqualToString:call.method]) {
+        [self bassChannelIsActive:call result:result];
+    } else if ([@"BASS_StreamFree" isEqualToString:call.method]) {
+        [self bassStreamFree:call result:result];
     }  else {
         result(FlutterMethodNotImplemented);
     }
@@ -124,9 +132,38 @@
     int handle = [[call.arguments objectForKey:@"handle"] intValue];
     double pos = [[call.arguments objectForKey:@"pos"] doubleValue];
     
-    long b = BASS_ChannelSeconds2Bytes(handle, pos);
-    result([NSNumber numberWithLong:b]);
+    double b = BASS_ChannelSeconds2Bytes(handle, pos);
+    result([NSNumber numberWithDouble:b]);
 }
+
+- (void)bassChannelPause:(FlutterMethodCall *)call result:(FlutterResult)result {
+    int handle = [[call.arguments objectForKey:@"handle"] intValue];
+    
+    bool isPlay = BASS_ChannelPause(handle);
+    result([NSNumber numberWithBool:isPlay]);
+}
+
+- (void)bassChannelStop:(FlutterMethodCall *)call result:(FlutterResult)result {
+    int handle = [[call.arguments objectForKey:@"handle"] intValue];
+    
+    bool isPlay = BASS_ChannelStop(handle);
+    result([NSNumber numberWithBool:isPlay]);
+}
+
+- (void)bassChannelIsActive:(FlutterMethodCall *)call result:(FlutterResult)result {
+    int handle = [[call.arguments objectForKey:@"handle"] intValue];
+    
+    int isActive = BASS_ChannelIsActive(handle);
+    result([NSNumber numberWithInt:isActive]);
+}
+
+- (void)bassStreamFree:(FlutterMethodCall *)call result:(FlutterResult)result {
+    int handle = [[call.arguments objectForKey:@"handle"] intValue];
+    
+    bool b = BASS_StreamFree(handle);
+    result([NSNumber numberWithBool:b]);
+}
+
 
 
 - (void)bassChannelGetInfo:(FlutterMethodCall *)call result:(FlutterResult)result {
