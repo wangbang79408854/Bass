@@ -4,50 +4,15 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1109f80-11e6-47b9-880e-bc71be716502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbass.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassenc.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassenc_mp3.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassmidi.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassmix.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbass.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassenc.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassenc_mp3.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassmidi.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassmix.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbass.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassenc.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassenc_mp3.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassmidi.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassmix.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbass.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassenc.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassenc_mp3.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassmidi.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassmix.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbass.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassenc.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassenc_mp3.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassmidi.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassmix.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSMIDI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSenc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSenc_MP3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSmix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/midi_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/BASS.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/BASSmix.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_CHANNELINFO.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_DEVICEINFO.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_INFO.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_RECORDINFO.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_SAMPLE.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/info/all.dart" afterDir="false" />
+    <list default="true" id="a1109f80-11e6-47b9-880e-bc71be716502" name="Default Changelist" comment="添加bass 示例，目前优先集成  bass中混音部分添加 播放进度功能">
+      <change afterPath="$PROJECT_DIR$/android/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassDelegate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/mixer_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mixer_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/bass.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bass.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -65,13 +30,12 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="5cc1a2ee" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
+            <state relative-caret-position="1118">
               <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -80,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/bass.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+            <state relative-caret-position="493">
+              <caret line="37" column="41" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="41" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -95,17 +59,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/platform_channel.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="8060">
               <caret line="320" column="32" selection-start-line="320" selection-start-column="32" selection-end-line="320" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/message_codecs.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="568" column="6" selection-start-line="568" selection-start-column="6" selection-end-line="568" selection-end-column="6" />
+            <state relative-caret-position="364">
+              <caret line="446" column="10" selection-start-line="446" selection-start-column="10" selection-end-line="446" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -113,7 +77,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/core/BASS.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2600">
+            <state relative-caret-position="8242">
               <caret line="317" column="33" selection-start-line="317" selection-start-column="20" selection-end-line="317" selection-end-column="33" />
             </state>
           </provider>
@@ -122,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/mixer_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="2262">
               <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -134,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/core/BASSmix.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="260">
               <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
             </state>
           </provider>
@@ -190,7 +154,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,7 +164,58 @@
             <path>
               <item name="bass" type="b2602c69:ProjectViewProjectNode" />
               <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bass" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bass" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bass" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bass" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bass" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="un4seen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bass" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="un4seen" type="462c0819:PsiDirectoryNode" />
+              <item name="bass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bass" type="b2602c69:ProjectViewProjectNode" />
@@ -218,13 +232,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -278,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582529226828</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加bass 示例，目前优先集成  bass中混音部分添加 播放进度功能">
+      <created>1582538320189</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582538320189</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -291,10 +313,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27985075" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27985075" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -304,7 +326,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.33877158" />
-      <window_info active="true" anchor="bottom" id="Run" order="1" visible="true" weight="0.45585412" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.23608445" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.20729366" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.32917467" />
@@ -326,14 +348,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add  BASS_ChannelSetAttribute" />
     <MESSAGE value="添加bass 示例，目前优先集成  bass中混音部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加bass 示例，目前优先集成  bass中混音部分" />
+    <MESSAGE value="添加bass 示例，目前优先集成  bass中混音部分添加 播放进度功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加bass 示例，目前优先集成  bass中混音部分添加 播放进度功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/bass.dart</url>
-          <line>75</line>
+          <line>91</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
@@ -353,7 +376,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/bass.dart</url>
-          <line>76</line>
+          <line>92</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
@@ -459,23 +482,9 @@
     <entry file="file://$PROJECT_DIR$/example/build/app/outputs/apk/app.apk">
       <provider selected="true" editor-type-id="apk-viewer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/core/BASS.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2600">
-          <caret line="317" column="33" selection-start-line="317" selection-start-column="20" selection-end-line="317" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/core/BASSmix.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
+        <state relative-caret-position="1118">
           <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -483,9 +492,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/platform_channel.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8060">
+          <caret line="320" column="32" selection-start-line="320" selection-start-column="32" selection-end-line="320" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/BASS.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8242">
+          <caret line="317" column="33" selection-start-line="317" selection-start-column="20" selection-end-line="317" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/mixer_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
+        <state relative-caret-position="2262">
           <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -493,27 +516,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bass.dart">
+    <entry file="file://$PROJECT_DIR$/lib/core/BASSmix.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/platform_channel.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="320" column="32" selection-start-line="320" selection-start-column="32" selection-end-line="320" selection-end-column="32" />
+        <state relative-caret-position="260">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/message_codecs.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="568" column="6" selection-start-line="568" selection-start-column="6" selection-end-line="568" selection-end-column="6" />
+        <state relative-caret-position="364">
+          <caret line="446" column="10" selection-start-line="446" selection-start-column="10" selection-end-line="446" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/bass.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

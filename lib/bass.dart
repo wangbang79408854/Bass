@@ -26,6 +26,22 @@ class Bass {
     return await _channel.invokeMethod('BASS_ChannelPlay', params);
   }
 
+  static Future<bool> BASS_ChannelPause(int handle) async{
+    var params = {"handle": handle};
+    return await _channel.invokeMethod('BASS_ChannelPause', params);
+  }
+
+  static Future<bool> BASS_ChannelStop(int handle) async{
+    var params = {"handle": handle};
+    return await _channel.invokeMethod('BASS_ChannelStop', params);
+  }
+  static Future<int> BASS_ChannelIsActive(int handle) async{
+    var params = {"handle": handle};
+    return await _channel.invokeMethod('BASS_ChannelIsActive', params);
+  }
+
+
+
   static Future<int> BASS_StreamCreateFile(String filePath) async {
     var params = {"filePath": filePath};
     return await _channel.invokeMethod('BASS_StreamCreateFile', params);
