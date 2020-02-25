@@ -55,9 +55,6 @@ class Bass {
   }
 
 
-
-
-
   static Future<int> BASS_StreamCreateFile(String filePath) async {
     var params = {"filePath": filePath};
     return await _channel.invokeMethod('BASS_StreamCreateFile', params);

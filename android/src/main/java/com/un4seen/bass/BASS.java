@@ -312,6 +312,7 @@ public class BASS
 	public static final int BASS_3DALG_FULL = 2;
 	public static final int BASS_3DALG_LIGHT = 3;
 
+
 	public interface STREAMPROC
 	{
 		int STREAMPROC(int handle, ByteBuffer buffer, int length, Object user);
@@ -389,6 +390,8 @@ public class BASS
 	public static final int BASS_SYNC_THREAD = 0x20000000;	// flag: call sync in other thread
 	public static final int BASS_SYNC_MIXTIME = 0x40000000;	// flag: sync at mixtime, else at playtime
 	public static final int BASS_SYNC_ONETIME = 0x80000000;	// flag: sync only once, else continuously
+
+
 
 	public interface SYNCPROC
 	{

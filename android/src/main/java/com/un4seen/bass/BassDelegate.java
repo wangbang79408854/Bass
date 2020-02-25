@@ -6,11 +6,17 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 
 import androidx.annotation.NonNull;
+import io.flutter.plugin.common.BasicMessageChannel;
+import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
+import io.flutter.plugin.common.StringCodec;
 
 //插件方法对照表
 class BassDelegate {
+
+    private final static String proSyn = "com.un4seen.bass/eventSYNCPROC";
+
 
     static final String Init = "init";
     static final String BASS_ChannelPlay = "BASS_ChannelPlay";
@@ -28,6 +34,11 @@ class BassDelegate {
     static final String BASS_ChannelPause = "BASS_ChannelPause";
     static final String BASS_ChannelStop = "BASS_ChannelStop";
     static final String BASS_ChannelIsActive = "BASS_ChannelIsActive";
+
+
+
+
+    static final String BASS_ChannelSetSync = "BASS_ChannelSetSync";
 
     {
         NumberFormat nf = NumberFormat.getInstance();
@@ -50,6 +61,10 @@ class BassDelegate {
             case BassDelegate.BASS_ChannelIsActive:
                 BassDelegate.BASS_ChannelIsActive(call, result);
                 break;
+            case BassDelegate.BASS_ChannelSetSync:
+                BassDelegate.BASS_ChannelSetSync(call, result);
+                break;
+
             case BassDelegate.BASS_StreamCreateFile:
                 BassDelegate.BASS_StreamCreateFile(call, result);
                 break;
@@ -125,6 +140,23 @@ class BassDelegate {
         int isActive = BASS.BASS_ChannelIsActive(handle);
         result.success(isActive);
     }
+    private static void BASS_ChannelSetSync(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
+        final BasicMessageChannel<String> messageChannel = new BasicMessageChannel<>(BassPlugin.binaryMessenger, proSyn, StringCodec.INSTANCE);
+        int handle = call.argument("handle");
+        int type = call.argument("type");
+        long param = call.argument("param");
+        BASS.BASS_ChannelSetSync(handle,type,param, new BASS.SYNCPROC(){
+
+            @Override
+            public void SYNCPROC(int handle, int channel, int data, Object user) {
+                SYNCPROCINFO syncprocinfo = new SYNCPROCINFO(handle, channel, data);
+                String json = new Gson().toJson(syncprocinfo);
+                messageChannel.send(json);
+            }
+        } ,0);
+
+    }
+
 
     private static void BASS_StreamFree(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int  handle = call.argument("handle");
@@ -202,5 +234,16 @@ class BassDelegate {
         int chan = call.argument("chan");
         boolean b = BASSmix.BASS_Mixer_StreamAddChannel(handle, chan, BASSmix.BASS_MIXER_NORAMPIN);
         result.success(b);
+    }
+    public static class SYNCPROCINFO{
+        public int handle;
+        public int channel;
+        public int data;
+        public SYNCPROCINFO(int handle,int channel,int data){
+            this.handle=handle;
+            this.channel=channel;
+            this.data=data;
+        }
+
     }
 }
