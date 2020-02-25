@@ -6,8 +6,14 @@ import 'package:flutter/services.dart';
 import 'core/BASSmix.dart';
 import 'core/info/all.dart';
 
+
+typedef SyncProc = void Function(Object object);
 class Bass {
   static const MethodChannel _channel = const MethodChannel('bass');
+
+  //proc 回调
+  static const EventChannel eventSYNCPROC = EventChannel("com.un4seen.bass/eventSYNCPROC");
+
 
   static int defaultFreq = 44100;
 
@@ -39,6 +45,16 @@ class Bass {
     var params = {"handle": handle};
     return await _channel.invokeMethod('BASS_ChannelIsActive', params);
   }
+
+
+  static Future BASS_ChannelSetSync(int handle, int type, num param,SyncProc syncProc) async{
+    var params = {"handle": handle,"type":type,"param":param};
+    await _channel.invokeMethod('BASS_ChannelSetSync', params);
+    //事件传递回来的信息
+    eventSYNCPROC.receiveBroadcastStream().listen(syncProc);
+  }
+
+
 
 
 
