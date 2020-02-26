@@ -50,11 +50,7 @@ class _MixerPageState extends State<MixerPage> {
     super.initState();
     initBass();
     // 加入测试数据
-//    _addTestData().then((_){
-//      setState(() {
-//
-//      });
-//    });
+//    _addTestData();
   }
   var _timerPeriodic;
   void initBass() async {
@@ -110,7 +106,6 @@ class _MixerPageState extends State<MixerPage> {
       });
 
       Bass.BASS_ChannelPlay(mixer);
-
 
   }
 

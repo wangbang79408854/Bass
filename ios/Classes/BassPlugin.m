@@ -2,16 +2,25 @@
 #import "bass.h"
 #import "bassmix.h"
 #import "bassenc_mp3.h"
+static BassPlugin *selfClass =nil;
+@interface BassPlugin ()
+@property (nonatomic, strong) FlutterBasicMessageChannel *channel;
+@end
 @implementation BassPlugin
+
+
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
     FlutterMethodChannel* channel = [FlutterMethodChannel
                                      methodChannelWithName:@"bass"
                                      binaryMessenger:[registrar messenger]];
+    FlutterBasicMessageChannel *basicChannel = [FlutterBasicMessageChannel messageChannelWithName:@"com.un4seen.bass/eventSYNCPROC" binaryMessenger:[registrar messenger]];
     BassPlugin* instance = [[BassPlugin alloc] init];
+    instance.channel = basicChannel;
     [registrar addMethodCallDelegate:instance channel:channel];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
+    selfClass = self;
     if ([@"getPlatformVersion" isEqualToString:call.method]) {
         result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
     } else if ([@"init" isEqualToString:call.method]) {
@@ -46,6 +55,8 @@
         [self bassChannelIsActive:call result:result];
     } else if ([@"BASS_StreamFree" isEqualToString:call.method]) {
         [self bassStreamFree:call result:result];
+    } else if ([@"BASS_ChannelSetSync" isEqualToString:call.method]) {
+        [self bassChannelSetSync:call result:result];
     }  else {
         result(FlutterMethodNotImplemented);
     }
@@ -164,7 +175,28 @@
     result([NSNumber numberWithBool:b]);
 }
 
+- (void)bassChannelSetSync:(FlutterMethodCall *)call result:(FlutterResult)result {
+    int handle = [[call.arguments objectForKey:@"handle"] intValue];
+    int type = [[call.arguments objectForKey:@"type"] intValue];
+    long param = [[call.arguments objectForKey:@"param"] longValue];
 
+    BASS_ChannelSetSync(handle, type, param, MySyncProc, 0);
+}
+
+void CALLBACK MySyncProc(HSYNC handle, DWORD channel, DWORD data, void *user) {
+    NSDictionary *handleInfo = @{@"handle":[NSNumber numberWithInt:handle],
+                                 @"channel":[NSNumber numberWithInt:channel],
+                                 @"data":[NSNumber numberWithInt:data],
+                                 };
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:handleInfo options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *strJson = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+
+    [selfClass sendMsg:strJson];
+}
+
+- (void)sendMsg:(NSString *)message {
+    [self.channel sendMessage:message];
+}
 
 - (void)bassChannelGetInfo:(FlutterMethodCall *)call result:(FlutterResult)result {
     int handle = [[call.arguments objectForKey:@"handle"] intValue];
