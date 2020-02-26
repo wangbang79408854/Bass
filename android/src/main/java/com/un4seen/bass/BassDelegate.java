@@ -1,5 +1,8 @@
 package com.un4seen.bass;
 
+import android.os.Handler;
+import android.os.Looper;
+
 import com.google.gson.Gson;
 
 import java.math.BigDecimal;
@@ -10,6 +13,9 @@ import io.flutter.plugin.common.BasicMessageChannel;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
+import io.flutter.plugin.common.MethodCodec;
+import io.flutter.plugin.common.StandardMessageCodec;
+import io.flutter.plugin.common.StandardMethodCodec;
 import io.flutter.plugin.common.StringCodec;
 
 //插件方法对照表
@@ -36,14 +42,13 @@ class BassDelegate {
     static final String BASS_ChannelIsActive = "BASS_ChannelIsActive";
 
 
-
-
     static final String BASS_ChannelSetSync = "BASS_ChannelSetSync";
 
     {
         NumberFormat nf = NumberFormat.getInstance();
         nf.setGroupingUsed(false);// 不用科学计数
     }
+
     static void handleMethod(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         switch (call.method) {
             case BassDelegate.Init:
@@ -130,36 +135,47 @@ class BassDelegate {
         boolean isplay = BASS.BASS_ChannelPause(handle);
         result.success(isplay);
     }
+
     private static void BASS_ChannelStop(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
         boolean isplay = BASS.BASS_ChannelStop(handle);
         result.success(isplay);
     }
+
     private static void BASS_ChannelIsActive(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
         int isActive = BASS.BASS_ChannelIsActive(handle);
         result.success(isActive);
     }
+
     private static void BASS_ChannelSetSync(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         final BasicMessageChannel<String> messageChannel = new BasicMessageChannel<>(BassPlugin.binaryMessenger, proSyn, StringCodec.INSTANCE);
         int handle = call.argument("handle");
         int type = call.argument("type");
-        long param = call.argument("param");
-        BASS.BASS_ChannelSetSync(handle,type,param, new BASS.SYNCPROC(){
+        long param = Long.valueOf(call.argument("param").toString());
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        BASS.BASS_ChannelSetSync(handle, type, param, new BASS.SYNCPROC() {
 
             @Override
             public void SYNCPROC(int handle, int channel, int data, Object user) {
                 SYNCPROCINFO syncprocinfo = new SYNCPROCINFO(handle, channel, data);
-                String json = new Gson().toJson(syncprocinfo);
-                messageChannel.send(json);
+                final String json = new Gson().toJson(syncprocinfo);
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        messageChannel.send(json);
+                    }
+                });
+
             }
-        } ,0);
+        }, 0);
 
     }
 
 
     private static void BASS_StreamFree(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
-        int  handle = call.argument("handle");
+        int handle = call.argument("handle");
         boolean b = BASS.BASS_StreamFree(handle);
         result.success(b);
     }
@@ -180,47 +196,51 @@ class BassDelegate {
         result.success(mixer);
     }
 
-    public static void BASS_ChannelSetAttribute(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+    public static void BASS_ChannelSetAttribute(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
         int attrib = call.argument("attrib");
         float value = Float.valueOf(call.argument("value").toString());
         boolean b = BASS.BASS_ChannelSetAttribute(handle, attrib, value);
         result.success(b);
     }
-    public static void BASS_ChannelGetPosition(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+
+    public static void BASS_ChannelGetPosition(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
         int mode = call.argument("mode");
-        long b = BASS.BASS_ChannelGetPosition(handle,mode);
+        long b = BASS.BASS_ChannelGetPosition(handle, mode);
         result.success(b);
     }
-    public static void BASS_ChannelSetPosition(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+
+    public static void BASS_ChannelSetPosition(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
 
         BigDecimal bd = new BigDecimal(call.argument("pos").toString());
         int mode = call.argument("mode");
-        boolean b = BASS.BASS_ChannelSetPosition(handle,bd.longValueExact(),mode);
+        boolean b = BASS.BASS_ChannelSetPosition(handle, bd.longValueExact(), mode);
         result.success(b);
     }
 
-    public static void BASS_ChannelGetLength(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+    public static void BASS_ChannelGetLength(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
         int mode = call.argument("mode");
-        long b = BASS.BASS_ChannelGetLength(handle,mode);
+        long b = BASS.BASS_ChannelGetLength(handle, mode);
         result.success(b);
     }
 
-    public static void BASS_ChannelBytes2Seconds(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+    public static void BASS_ChannelBytes2Seconds(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
-        long pos =Long.parseLong(call.argument("pos").toString());
-        double b = BASS.BASS_ChannelBytes2Seconds(handle,pos);
+        long pos = Long.parseLong(call.argument("pos").toString());
+        double b = BASS.BASS_ChannelBytes2Seconds(handle, pos);
         result.success(b);
     }
-    public static void BASS_ChannelSeconds2Bytes(@NonNull MethodCall call, @NonNull MethodChannel.Result result){
+
+    public static void BASS_ChannelSeconds2Bytes(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
-        double pos =Double.parseDouble( call.argument("pos").toString());
-        double b = BASS.BASS_ChannelSeconds2Bytes(handle,pos);
+        double pos = Double.parseDouble(call.argument("pos").toString());
+        double b = BASS.BASS_ChannelSeconds2Bytes(handle, pos);
         result.success(b);
     }
+
     private static void BASS_ChannelGetInfo(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         int handle = call.argument("handle");
         BASS.BASS_CHANNELINFO info = new BASS.BASS_CHANNELINFO();
@@ -235,14 +255,16 @@ class BassDelegate {
         boolean b = BASSmix.BASS_Mixer_StreamAddChannel(handle, chan, BASSmix.BASS_MIXER_NORAMPIN);
         result.success(b);
     }
-    public static class SYNCPROCINFO{
+
+    public static class SYNCPROCINFO {
         public int handle;
         public int channel;
         public int data;
-        public SYNCPROCINFO(int handle,int channel,int data){
-            this.handle=handle;
-            this.channel=channel;
-            this.data=data;
+
+        public SYNCPROCINFO(int handle, int channel, int data) {
+            this.handle = handle;
+            this.channel = channel;
+            this.data = data;
         }
 
     }

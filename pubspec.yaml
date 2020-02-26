@@ -1,8 +1,8 @@
 name: bass
-description: A new bass plugin.
+description: A bass plugin.
 version: 0.0.1
-author:
-homepage:
+author: "79408854@qq.com"
+homepage: "https://gitlab.com/novapps/flutter-app/frameworks/bass"
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

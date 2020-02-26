@@ -1,8 +1,16 @@
-# bass
+# bass 0.0.1
 
-A new bass plugin.
+bass:
+    git:
+      url: https://gitlab.com/novapps/flutter-app/frameworks/bass.git
 
-## Getting Started
+
+
+
+
+
+
+
 
 This project is a starting point for a Flutter
 [plug-in package](https://flutter.dev/developing-packages/),

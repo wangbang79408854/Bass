@@ -112,7 +112,6 @@ class _MixerPageState extends State<MixerPage> {
       Bass.BASS_ChannelPlay(mixer);
 
 
-
   }
 
   void chooseFile() async {
