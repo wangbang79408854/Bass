@@ -104,7 +104,15 @@ class _MixerPageState extends State<MixerPage> {
       for (var item in paths) {
         Bass.BASS_Mixer_StreamAddChannel(mixer, item.handle);
       }
+
+      Bass.BASS_ChannelSetSync(paths[0].handle,BASS.BASS_SYNC_END,0,(Object object){
+        print("结束回调"+object);
+      });
+
       Bass.BASS_ChannelPlay(mixer);
+
+
+
   }
 
   void chooseFile() async {

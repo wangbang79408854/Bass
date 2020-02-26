@@ -227,6 +227,27 @@ class BASS {
   static final int BASS_CTYPE_MUSIC_MO3 = 0x00100; // MO3 flag
 
 
+
+  // BASS_ChannelSetSync types
+   static final int BASS_SYNC_POS = 0;
+   static final int BASS_SYNC_END = 2;
+   static final int BASS_SYNC_META = 4;
+   static final int BASS_SYNC_SLIDE = 5;
+   static final int BASS_SYNC_STALL = 6;
+   static final int BASS_SYNC_DOWNLOAD = 7;
+   static final int BASS_SYNC_FREE = 8;
+   static final int BASS_SYNC_SETPOS = 11;
+   static final int BASS_SYNC_MUSICPOS = 10;
+   static final int BASS_SYNC_MUSICINST = 1;
+   static final int BASS_SYNC_MUSICFX = 3;
+   static final int BASS_SYNC_OGG_CHANGE = 12;
+   static final int BASS_SYNC_DEV_FAIL = 14;
+   static final int BASS_SYNC_DEV_FORMAT = 15;
+   static final int BASS_SYNC_THREAD = 0x20000000;	// flag: call sync in other thread
+   static final int BASS_SYNC_MIXTIME = 0x40000000;	// flag: sync at mixtime, else at playtime
+   static final int BASS_SYNC_ONETIME = 0x80000000;	// flag: sync only once, else continuously
+
+
   // BASS_ChannelIsActive return values
   static final int BASS_ACTIVE_STOPPED = 0;
   static final int BASS_ACTIVE_PLAYING = 1;
