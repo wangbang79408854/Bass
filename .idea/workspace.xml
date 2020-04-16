@@ -4,14 +4,55 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1109f80-11e6-47b9-880e-bc71be716502" name="Default Changelist" comment="添加bass 示例，目前优先集成  bass中混音部分添加 播放进度功能">
+    <list default="true" id="a1109f80-11e6-47b9-880e-bc71be716502" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbass.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassenc.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassenc_mp3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassmidi.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/arm64-v8a/libbassmix.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbass.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassenc.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassenc_mp3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassmidi.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi-v7a/libbassmix.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbass.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassenc.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassenc_mp3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassmidi.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/armeabi/libbassmix.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbass.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassenc.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassenc_mp3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassmidi.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86/libbassmix.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbass.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassenc.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassenc_mp3.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassmidi.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/x86_64/libbassmix.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSMIDI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSenc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSenc_MP3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSmix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/midi_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mixer_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/BASS.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/BASSmix.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_CHANNELINFO.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_DEVICEINFO.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_INFO.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_RECORDINFO.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/info/BASS_SAMPLE.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/info/all.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../starter/flutter_starter/android/pk/pk.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../starter/flutter_starter/android/pk/pk.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../starter/flutter_starter/android/pk/wallpaper.keystore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../starter/flutter_starter/lib/api/test_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../starter/flutter_starter/lib/store/counter/counter.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassDelegate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/mixer_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mixer_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bass.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bass.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -32,40 +73,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/bass.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/android/gradle.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/platform_channel.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="36" column="27" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="27" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/android/bass_android.iml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassDelegate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="151" column="33" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="33" />
+            <state relative-caret-position="3588">
+              <caret line="154" column="54" selection-start-line="154" selection-start-column="54" selection-end-line="154" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,58 +95,48 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/core/BASS.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="253" column="43" selection-start-line="253" selection-start-column="43" selection-end-line="253" selection-end-column="43" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/android/bass.iml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/core/BASSmix.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/android/android.iml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/lib/mixer_page.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/android/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSenc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="453">
+              <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSMIDI.java">
+        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="208">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSmix.java">
+        <entry file="file://$PROJECT_DIR$/example/android/gradle.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/local.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="26">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -146,8 +157,8 @@
       <find>BASS_POS_BYTE</find>
       <find>BASS_ChannelSetSync</find>
       <find>BasicMessageChannel</find>
-      <find>proSyn</find>
       <find>eventSYNCPROC</find>
+      <find>proSyn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,6 +178,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/example/lib/mixer_page.dart" />
         <option value="$PROJECT_DIR$/lib/bass.dart" />
+        <option value="$PROJECT_DIR$/android/local.properties" />
       </list>
     </option>
   </component>
@@ -176,6 +188,7 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectId" id="1acJmFwNOMxyENy5BEIIH5nRfSF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -184,97 +197,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="un4seen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="un4seen" type="462c0819:PsiDirectoryNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bass" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -282,7 +207,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -371,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582706274548</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改示例">
+      <created>1582707799480</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1582707799480</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -387,7 +319,7 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21055438" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19083156" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -401,7 +333,7 @@
       <window_info anchor="bottom" id="TODO" order="2" weight="0.20729366" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.32917467" />
-      <window_info active="true" anchor="bottom" id="Debug" order="5" visible="true" weight="0.39635316" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.14203455" />
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.23128599" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.15930901" />
@@ -423,7 +355,8 @@
     <MESSAGE value="添加同步接口" />
     <MESSAGE value="添加bass 示例，目前优先集成  bass中混音部分添加 播放进度功能" />
     <MESSAGE value="修改回调demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改回调demo" />
+    <MESSAGE value="修改示例" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改示例" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -535,9 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/android/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/android/gradlew">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -602,6 +532,44 @@
     <entry file="file://$PROJECT_DIR$/example/build/app/outputs/apk/app.apk">
       <provider selected="true" editor-type-id="apk-viewer" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/platform_channel.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/BASS.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6578">
+          <caret line="253" column="43" selection-start-line="253" selection-start-column="43" selection-end-line="253" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/BASSmix.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/mixer_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3120">
+          <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSMIDI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -616,68 +584,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/core/BASS.dart">
+    <entry file="file://$PROJECT_DIR$/lib/bass.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="253" column="43" selection-start-line="253" selection-start-column="43" selection-end-line="253" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/core/BASSmix.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSenc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/mixer_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
+        <state relative-caret-position="208">
+          <caret line="44" column="3" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/android/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://C:/src/flutter/packages/flutter/lib/src/services/platform_channel.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="27" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/android/bass_android.iml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BassDelegate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="151" column="33" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="33" />
+        <state relative-caret-position="3588">
+          <caret line="154" column="54" selection-start-line="154" selection-start-column="54" selection-end-line="154" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bass.dart">
+    <entry file="file://$PROJECT_DIR$/android/bass.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/android.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="208">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/android/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/un4seen/bass/BASSenc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
         </state>
       </provider>
     </entry>
