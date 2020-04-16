@@ -2,7 +2,7 @@
 
 bass:
     git:
-      url: https://gitlab.com/novapps/flutter-app/frameworks/bass.git
+      url:https://github.com/wangbang79408854/Bass.git
 
 
 
